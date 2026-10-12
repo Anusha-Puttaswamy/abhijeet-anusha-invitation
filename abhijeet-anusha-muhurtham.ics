@@ -1,0 +1,23 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Abhijeet and Anusha//Muhurtham//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:abhijeet-anusha-muhurtham-20261112@invitation
+DTSTAMP:20261010T200000Z
+DTSTART:20261112T150000Z
+DTEND:20261112T160000Z
+SUMMARY:Abhijeet & Anusha — Muhurtham
+DESCRIPTION:Join Abhijeet and Anusha for their sacred Muhurtham ceremony.
+LOCATION:Sri Guruvayurappan Temple\, 1701 Spring Valley Rd\, Carrollton\, TX 75006
+URL:https://www.google.com/maps/search/?api=1&query=Sri%20Guruvayurappan%20Temple%2C%201701%20Spring%20Valley%20Rd%2C%20Carrollton%2C%20TX%2075006
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+BEGIN:VALARM
+TRIGGER:-P1D
+ACTION:DISPLAY
+DESCRIPTION:Abhijeet & Anusha's Muhurtham is tomorrow
+END:VALARM
+END:VEVENT
+END:VCALENDAR
