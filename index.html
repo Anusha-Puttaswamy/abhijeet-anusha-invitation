@@ -846,6 +846,47 @@
       transition: border-color .2s ease, box-shadow .2s ease;
     }
     .field textarea { min-height: 148px; resize: vertical; }
+    .emoji-picker {
+      border: 1px solid rgba(223, 123, 40, .26);
+      background: #fffaf2;
+      border-radius: 0;
+      min-width: 0;
+    }
+    .emoji-picker summary {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      min-height: 44px;
+      padding: 10px 12px;
+      color: #78512a;
+      font: 16px/1.4 "Cormorant Garamond", Georgia, serif;
+      cursor: pointer;
+      list-style: none;
+    }
+    .emoji-picker summary::-webkit-details-marker { display: none; }
+    .emoji-picker summary::after { content: "+"; margin-left: auto; font-size: 22px; }
+    .emoji-picker[open] summary::after { content: "−"; }
+    .emoji-panel { padding: 0 12px 12px; }
+    .emoji-hint { margin: 0 0 12px; color: #6b5b58; font-size: 13px; line-height: 1.5; }
+    .emoji-category + .emoji-category { margin-top: 14px; }
+    .emoji-category-label { margin: 0 0 6px; color: #78512a; font-size: 13px; }
+    .emoji-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(42px, 1fr)); gap: 4px; }
+    .emoji-choice {
+      display: grid;
+      place-items: center;
+      width: 100%;
+      min-height: 44px;
+      padding: 5px;
+      border: 1px solid transparent;
+      border-radius: 0;
+      background: transparent;
+      font: 23px/1.2 "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+      cursor: pointer;
+      touch-action: manipulation;
+    }
+    .emoji-choice:hover { background: #fff0d9; border-color: #eab66e; }
+    .emoji-done { margin-top: 12px; min-height: 44px; padding: 8px 18px; border: 1px solid #dba367; border-radius: 0; background: transparent; color: #78512a; font: inherit; cursor: pointer; }
+    .emoji-picker summary:focus-visible, .emoji-choice:focus-visible, .emoji-done:focus-visible { outline: 2px solid #cb792b; outline-offset: 2px; }
     .field input:focus, .field textarea:focus {
       border-color: var(--karnataka);
       box-shadow: 0 0 0 3px rgba(171, 31, 62, .09);
@@ -1398,6 +1439,82 @@
             <div class="field">
               <label for="wishMessage">Wishes &amp; Messages</label>
               <textarea id="wishMessage" name="message" maxlength="1000" placeholder="Send us a little note…"></textarea>
+              <details class="emoji-picker" id="wishEmojiPicker">
+                <summary id="wishEmojiToggle"><span aria-hidden="true">😊</span> Add an emoji</summary>
+                <div class="emoji-panel">
+                  <p class="emoji-hint" id="wishEmojiHint" role="status" aria-live="polite">Tap an emoji to add it to your message.</p>
+                <div class="emoji-category">
+                  <p class="emoji-category-label">Hearts &amp; love</p>
+                  <div class="emoji-grid">
+                    <button class="emoji-choice" type="button" data-wish-emoji="❤️" aria-label="Add red heart">❤️</button>
+                    <button class="emoji-choice" type="button" data-wish-emoji="🧡" aria-label="Add orange heart">🧡</button>
+                    <button class="emoji-choice" type="button" data-wish-emoji="💛" aria-label="Add yellow heart">💛</button>
+                    <button class="emoji-choice" type="button" data-wish-emoji="💚" aria-label="Add green heart">💚</button>
+                    <button class="emoji-choice" type="button" data-wish-emoji="💙" aria-label="Add blue heart">💙</button>
+                    <button class="emoji-choice" type="button" data-wish-emoji="💜" aria-label="Add purple heart">💜</button>
+                    <button class="emoji-choice" type="button" data-wish-emoji="🤍" aria-label="Add white heart">🤍</button>
+                    <button class="emoji-choice" type="button" data-wish-emoji="💕" aria-label="Add two hearts">💕</button>
+                    <button class="emoji-choice" type="button" data-wish-emoji="💞" aria-label="Add revolving hearts">💞</button>
+                    <button class="emoji-choice" type="button" data-wish-emoji="💖" aria-label="Add sparkling heart">💖</button>
+                    <button class="emoji-choice" type="button" data-wish-emoji="🥰" aria-label="Add smiling face with hearts">🥰</button>
+                    <button class="emoji-choice" type="button" data-wish-emoji="😍" aria-label="Add heart eyes">😍</button>
+                    <button class="emoji-choice" type="button" data-wish-emoji="🫶" aria-label="Add heart hands">🫶</button>
+                  </div>
+                </div>
+                <div class="emoji-category">
+                  <p class="emoji-category-label">Celebrate</p>
+                  <div class="emoji-grid">
+                    <button class="emoji-choice" type="button" data-wish-emoji="🎉" aria-label="Add party popper">🎉</button>
+                    <button class="emoji-choice" type="button" data-wish-emoji="🎊" aria-label="Add confetti ball">🎊</button>
+                    <button class="emoji-choice" type="button" data-wish-emoji="🥳" aria-label="Add party face">🥳</button>
+                    <button class="emoji-choice" type="button" data-wish-emoji="✨" aria-label="Add sparkles">✨</button>
+                    <button class="emoji-choice" type="button" data-wish-emoji="🌟" aria-label="Add glowing star">🌟</button>
+                    <button class="emoji-choice" type="button" data-wish-emoji="💫" aria-label="Add dizzy star">💫</button>
+                    <button class="emoji-choice" type="button" data-wish-emoji="🎈" aria-label="Add balloon">🎈</button>
+                    <button class="emoji-choice" type="button" data-wish-emoji="🎁" aria-label="Add gift">🎁</button>
+                    <button class="emoji-choice" type="button" data-wish-emoji="🎀" aria-label="Add ribbon">🎀</button>
+                    <button class="emoji-choice" type="button" data-wish-emoji="💍" aria-label="Add ring">💍</button>
+                    <button class="emoji-choice" type="button" data-wish-emoji="🥂" aria-label="Add clinking glasses">🥂</button>
+                    <button class="emoji-choice" type="button" data-wish-emoji="🎂" aria-label="Add birthday cake">🎂</button>
+                  </div>
+                </div>
+                <div class="emoji-category">
+                  <p class="emoji-category-label">Flowers &amp; blessings</p>
+                  <div class="emoji-grid">
+                    <button class="emoji-choice" type="button" data-wish-emoji="💐" aria-label="Add bouquet">💐</button>
+                    <button class="emoji-choice" type="button" data-wish-emoji="🌸" aria-label="Add cherry blossom">🌸</button>
+                    <button class="emoji-choice" type="button" data-wish-emoji="🌺" aria-label="Add hibiscus">🌺</button>
+                    <button class="emoji-choice" type="button" data-wish-emoji="🌷" aria-label="Add tulip">🌷</button>
+                    <button class="emoji-choice" type="button" data-wish-emoji="🌹" aria-label="Add rose">🌹</button>
+                    <button class="emoji-choice" type="button" data-wish-emoji="🌼" aria-label="Add blossom">🌼</button>
+                    <button class="emoji-choice" type="button" data-wish-emoji="🌻" aria-label="Add sunflower">🌻</button>
+                    <button class="emoji-choice" type="button" data-wish-emoji="🪷" aria-label="Add lotus">🪷</button>
+                    <button class="emoji-choice" type="button" data-wish-emoji="🙏" aria-label="Add folded hands">🙏</button>
+                    <button class="emoji-choice" type="button" data-wish-emoji="🕉️" aria-label="Add om">🕉️</button>
+                    <button class="emoji-choice" type="button" data-wish-emoji="🪔" aria-label="Add diya lamp">🪔</button>
+                    <button class="emoji-choice" type="button" data-wish-emoji="🍀" aria-label="Add four leaf clover">🍀</button>
+                  </div>
+                </div>
+                <div class="emoji-category">
+                  <p class="emoji-category-label">Smiles &amp; cheers</p>
+                  <div class="emoji-grid">
+                    <button class="emoji-choice" type="button" data-wish-emoji="😊" aria-label="Add smiling face">😊</button>
+                    <button class="emoji-choice" type="button" data-wish-emoji="😄" aria-label="Add happy face">😄</button>
+                    <button class="emoji-choice" type="button" data-wish-emoji="😁" aria-label="Add beaming face">😁</button>
+                    <button class="emoji-choice" type="button" data-wish-emoji="🤗" aria-label="Add hugging face">🤗</button>
+                    <button class="emoji-choice" type="button" data-wish-emoji="😇" aria-label="Add smiling face with halo">😇</button>
+                    <button class="emoji-choice" type="button" data-wish-emoji="😘" aria-label="Add blowing a kiss">😘</button>
+                    <button class="emoji-choice" type="button" data-wish-emoji="😎" aria-label="Add smiling face with sunglasses">😎</button>
+                    <button class="emoji-choice" type="button" data-wish-emoji="😂" aria-label="Add face with tears of joy">😂</button>
+                    <button class="emoji-choice" type="button" data-wish-emoji="🥹" aria-label="Add face holding back tears">🥹</button>
+                    <button class="emoji-choice" type="button" data-wish-emoji="👍" aria-label="Add thumbs up">👍</button>
+                    <button class="emoji-choice" type="button" data-wish-emoji="👏" aria-label="Add clapping hands">👏</button>
+                    <button class="emoji-choice" type="button" data-wish-emoji="🙌" aria-label="Add raised hands">🙌</button>
+                  </div>
+                </div>
+                  <button class="emoji-done" id="wishEmojiDone" type="button">Done</button>
+                </div>
+              </details>
             </div>
 
             <p class="wishes-helper">Your message will appear in the Wishes Wall below.</p>
@@ -1763,6 +1880,32 @@
     const wishForm = document.getElementById('wishForm');
     const wishSubmit = document.getElementById('wishSubmit');
     const wishStatus = document.getElementById('wishStatus');
+    const wishMessageInput = document.getElementById('wishMessage');
+    const wishEmojiPicker = document.getElementById('wishEmojiPicker');
+    const wishEmojiHint = document.getElementById('wishEmojiHint');
+    document.querySelectorAll('[data-wish-emoji]').forEach((button) => {
+      button.addEventListener('click', () => {
+        const emoji = button.dataset.wishEmoji;
+        const start = wishMessageInput.selectionStart ?? wishMessageInput.value.length;
+        const end = wishMessageInput.selectionEnd ?? start;
+        if (wishMessageInput.value.length - (end - start) + emoji.length > wishMessageInput.maxLength) {
+          wishEmojiHint.textContent = 'Your message is full. Remove a little text to add an emoji.';
+          return;
+        }
+        wishMessageInput.setRangeText(emoji, start, end, 'end');
+        wishEmojiHint.textContent = `${emoji} added to your message.`;
+      });
+    });
+    document.getElementById('wishEmojiDone').addEventListener('click', () => {
+      wishEmojiPicker.open = false;
+      wishMessageInput.focus({ preventScroll: true });
+    });
+    wishEmojiPicker.addEventListener('keydown', (event) => {
+      if (event.key !== 'Escape') return;
+      event.preventDefault();
+      wishEmojiPicker.open = false;
+      document.getElementById('wishEmojiToggle').focus({ preventScroll: true });
+    });
     const wishViewport = document.getElementById('wishViewport');
     const wishMessage = document.getElementById('wishDisplayMessage');
     const wishAuthor = document.getElementById('wishDisplayAuthor');
