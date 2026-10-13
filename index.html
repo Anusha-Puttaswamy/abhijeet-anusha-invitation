@@ -284,7 +284,7 @@
     .parentage span { display: block; }
     .couple-with {
       display: block;
-      margin: 5px 0 3px;
+      margin: calc(5px + .7em) 0 calc(3px + .7em);
       color: var(--gold);
       font-family: "Pinyon Script", cursive;
       font-size: clamp(35px, 5vw, 48px);
@@ -752,7 +752,7 @@
     }
     .family-grid { display: grid; grid-template-columns: minmax(0, 640px); justify-content: center; }
     .family-card {
-      min-height: 210px;
+      min-height: 120px;
       display: grid;
       align-content: center;
       justify-items: center;
@@ -772,14 +772,6 @@
       text-transform: uppercase;
       line-height: 1.35;
       text-wrap: balance;
-    }
-    .family-divider { margin: 18px 0 14px; color: var(--gold); font-size: 20px; }
-    .family-presence {
-      margin: 0;
-      color: #6f8c63;
-      font-family: "Cormorant Garamond", serif;
-      font-size: clamp(16px, 2vw, 20px);
-      font-style: italic;
     }
     .wishes {
       position: relative;
@@ -1206,7 +1198,7 @@
       .action { flex: 1 1 100%; }
       .families { margin-top: 56px; padding: 40px 15px 22px; }
       .family-grid { grid-template-columns: 1fr; gap: 15px; }
-      .family-card { min-height: 210px; padding: 30px 18px; }
+      .family-card { min-height: 120px; padding: 30px 18px; }
       .story .blessing-title { font-size: clamp(24px, 6.2vw, 40px); line-height: 1.15; }
       .wishes { margin-top: 56px; padding: 40px 20px 34px; }
       .wishes-wall { margin-top: 56px; padding: 40px 12px; }
@@ -1238,7 +1230,7 @@
       .invite-copy { max-width: 82vw; margin: 3.5vw auto 3vw; font-size: 4.3vw; line-height: 1.5; }
       .person-name { font-size: 16vw; line-height: 1.04; }
       .parentage { margin-top: 1.5vw; font-size: 4.6vw; }
-      .couple-with { margin: 1.5vw 0 1vw; font-size: 9vw; }
+      .couple-with { margin: calc(1.5vw + .7em) 0 calc(1vw + .7em); font-size: 9vw; }
       .hero-scroll { gap: 3vw; margin-top: 5vw; padding: 3.4vw 7.2vw; font-size: 2.9vw; }
       .hero-scroll span { font-size: 4.6vw; }
       .hero-emerald::after, .hero-sunset::after { height: 12vw; }
@@ -1410,8 +1402,6 @@
           <div class="family-grid">
             <article class="family-card">
               <h3>Bride’s &amp; Groom’s Families</h3>
-              <div class="family-divider" aria-hidden="true">❀</div>
-              <p class="family-presence">Awaiting your Gracious Presence</p>
             </article>
           </div>
         </section>
