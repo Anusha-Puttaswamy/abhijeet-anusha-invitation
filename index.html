@@ -1236,6 +1236,22 @@
       .map-label { left: 14px; right: 14px; bottom: 14px; }
     }
 
+    @media (min-width: 761px) and (hover: none) and (pointer: coarse) and (orientation: portrait) {
+      .hero { min-height: min(100svh, 155vw); padding: 7vw 3vw 10vw; }
+      .hero-card { width: 100%; padding: 3vw; }
+      .hero-style-art img { object-fit: cover; }
+      .ganesha-icon { width: 26vw; }
+      .ganesha-blessing { gap: 1vw; margin: 0 auto 3vw; }
+      .ganesha-blessing p { font-size: 4.3vw; }
+      .invite-copy { max-width: 82vw; margin: 3.5vw auto 3vw; font-size: 4.3vw; line-height: 1.5; }
+      .person-name { font-size: 16vw; line-height: 1.04; }
+      .parentage { margin-top: 1.5vw; font-size: 4.6vw; }
+      .couple-with { margin: 1.5vw 0 1vw; font-size: 9vw; }
+      .hero-scroll { gap: 3vw; margin-top: 5vw; padding: 3.4vw 7.2vw; font-size: 2.9vw; }
+      .hero-scroll span { font-size: 4.6vw; }
+      .hero-emerald::after, .hero-sunset::after { height: 12vw; }
+    }
+
     @media (max-width: 600px) {
       .facts { grid-template-columns: 1fr; }
       .fact { padding: 24px 4px; }
@@ -1299,7 +1315,7 @@
       </svg>
 
       <picture class="hero-style-art" aria-hidden="true">
-        <source media="(max-width: 760px)" srcset="assets/hero-emerald-mobile.webp" width="1024" height="1536" />
+        <source media="(max-width: 760px), (hover: none) and (pointer: coarse) and (orientation: portrait)" srcset="assets/hero-emerald-mobile.webp" width="1024" height="1536" />
         <img src="assets/hero-emerald-desktop.webp" alt="" width="1536" height="1024" fetchpriority="high" />
       </picture>
 
@@ -1314,7 +1330,7 @@
           <span class="parentage">D/o K Puttaswamy<span>&amp; Smt. Padmavathi</span></span>
           <span class="couple-with">with</span>
           <span class="person-name">Abhijeet P</span>
-          <span class="parentage">S/o Prem Kumar<span>&amp; Late Smt. Anitha</span></span>
+          <span class="parentage">S/o Premkumar M S<span>&amp; Late Smt. Anita Kumari C S</span></span>
         </h1>
         <a class="hero-scroll" href="#our-story">Scroll Down <span aria-hidden="true">⌄</span></a>
       </div>
@@ -1405,9 +1421,10 @@
               <div class="family-divider" aria-hidden="true">❀</div>
               <p class="family-presence">Awaiting your Gracious Presence</p>
               <ul class="family-list">
-                <li>Smt. Shanthamma</li>
-                <li>Sukumaran</li>
-                <li>Apoorva P</li>
+                <li>Smt. Santhamma A K</li>
+                <li>Sukumaran C N</li>
+                <li>Ajita Kumari</li>
+                <li>Apoorva Prem</li>
               </ul>
             </article>
 
