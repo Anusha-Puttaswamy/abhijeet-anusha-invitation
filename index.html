@@ -750,9 +750,9 @@
       font-weight: 400;
       line-height: 1;
     }
-    .family-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .family-grid { display: grid; grid-template-columns: minmax(0, 640px); justify-content: center; }
     .family-card {
-      min-height: 300px;
+      min-height: 210px;
       display: grid;
       align-content: center;
       justify-items: center;
@@ -770,25 +770,17 @@
       font-weight: 600;
       letter-spacing: .14em;
       text-transform: uppercase;
+      line-height: 1.35;
+      text-wrap: balance;
     }
     .family-divider { margin: 18px 0 14px; color: var(--gold); font-size: 20px; }
     .family-presence {
-      margin: 0 0 17px;
+      margin: 0;
       color: #6f8c63;
       font-family: "Cormorant Garamond", serif;
       font-size: clamp(16px, 2vw, 20px);
       font-style: italic;
     }
-    .family-list { margin: 0; padding: 0; list-style: none; display: grid; gap: 7px; }
-    .family-list li {
-      color: #463e31;
-      font-family: "Cormorant Garamond", serif;
-      font-size: clamp(20px, 2.4vw, 25px);
-      font-weight: 400;
-      font-style: italic;
-      line-height: 1.5;
-    }
-
     .wishes {
       position: relative;
       width: min(860px, 100%);
@@ -1214,7 +1206,7 @@
       .action { flex: 1 1 100%; }
       .families { margin-top: 56px; padding: 40px 15px 22px; }
       .family-grid { grid-template-columns: 1fr; gap: 15px; }
-      .family-card { min-height: 245px; padding: 30px 18px; }
+      .family-card { min-height: 210px; padding: 30px 18px; }
       .story .blessing-title { font-size: clamp(24px, 6.2vw, 40px); line-height: 1.15; }
       .wishes { margin-top: 56px; padding: 40px 20px 34px; }
       .wishes-wall { margin-top: 56px; padding: 40px 12px; }
@@ -1417,26 +1409,9 @@
 
           <div class="family-grid">
             <article class="family-card">
-              <h3>Groom’s Family</h3>
+              <h3>Bride’s &amp; Groom’s Families</h3>
               <div class="family-divider" aria-hidden="true">❀</div>
               <p class="family-presence">Awaiting your Gracious Presence</p>
-              <ul class="family-list">
-                <li>Smt. Santhamma A K</li>
-                <li>Sukumaran C N</li>
-                <li>Ajita Kumari</li>
-                <li>Apoorva Prem</li>
-              </ul>
-            </article>
-
-            <article class="family-card">
-              <h3>Bride’s Family</h3>
-              <div class="family-divider" aria-hidden="true">❀</div>
-              <p class="family-presence">Awaiting your Gracious Presence</p>
-              <ul class="family-list">
-                <li>Smt. Padmavathi S</li>
-                <li>Puttaswamy K</li>
-                <li>Abhishek P</li>
-              </ul>
             </article>
           </div>
         </section>
