@@ -166,7 +166,8 @@
       display: grid;
       place-items: center;
       overflow: hidden;
-      padding: 88px 20px 72px;
+      align-items: start;
+      padding: 40px 20px 72px;
       background:
         radial-gradient(ellipse at 50% 34%, rgba(255,255,255,.95) 0 18%, rgba(255,252,245,.72) 42%, transparent 70%),
         linear-gradient(180deg, #fff7e8 0%, #f8ecda 64%, #d7e8de 100%);
@@ -200,7 +201,7 @@
       background: transparent;
       border: 0;
       box-shadow: none;
-      padding: clamp(42px, 7vw, 74px) clamp(22px, 8vw, 76px) clamp(34px, 6vw, 58px);
+      padding: clamp(16px, 3vw, 32px) clamp(22px, 8vw, 76px) clamp(34px, 6vw, 58px);
     }
 
     .hero-card::before {
@@ -746,14 +747,6 @@
     }
     .families-head { text-align: center; margin-bottom: 38px; }
     .families-head .section-kicker { margin-bottom: 4px; color: #64875c; }
-    .families-head h2 {
-      margin: 0;
-      color: var(--karnataka);
-      font-family: "Pinyon Script", cursive;
-      font-size: clamp(54px, 8vw, 82px);
-      font-weight: 400;
-      line-height: 1;
-    }
     .family-grid { display: grid; grid-template-columns: minmax(0, 640px); justify-content: center; }
     .family-card {
       min-height: 120px;
@@ -1225,8 +1218,8 @@
     }
 
     @media (min-width: 761px) and (hover: none) and (pointer: coarse) and (orientation: portrait) {
-      .hero { min-height: min(100svh, 155vw); padding: 7vw 3vw 10vw; }
-      .hero-card { width: 100%; padding: 3vw; }
+      .hero { min-height: min(100svh, 155vw); padding: 4vw 3vw 10vw; }
+      .hero-card { width: 100%; padding: 2vw 3vw 3vw; }
       .hero-style-art img { object-fit: cover; }
       .ganesha-icon { width: 26vw; }
       .ganesha-blessing { gap: 1vw; margin: 0 auto 3vw; }
@@ -1401,12 +1394,11 @@
         <section class="families reveal" aria-labelledby="families-title">
           <header class="families-head">
             <p class="section-kicker">With love</p>
-            <h2 id="families-title">The Families</h2>
           </header>
 
           <div class="family-grid">
             <article class="family-card">
-              <h3>Bride’s &amp; Groom’s Families</h3>
+              <h3 id="families-title">Bride’s &amp; Groom’s Families</h3>
             </article>
           </div>
         </section>
