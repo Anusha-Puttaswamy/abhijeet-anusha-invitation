@@ -1578,7 +1578,7 @@
     function showerFlowers() {
       const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       if (reducedMotion) return;
-      const count = window.innerWidth <= 760 ? 48 : 78;
+      const count = window.innerWidth <= 760 ? 100 : 160;
       const fragment = document.createDocumentFragment();
 
       for (let index = 0; index < count; index += 1) {
@@ -1592,13 +1592,13 @@
         flower.style.setProperty('--flower-size', `${Math.round(12 + Math.random() * 11)}px`);
         flower.style.setProperty('--flower-drift', `${Math.round(-24 + Math.random() * 48)}px`);
         flower.style.setProperty('--flower-spin', `${Math.round(120 + Math.random() * 180)}deg`);
-        flower.style.setProperty('--flower-delay', `${Math.random() * .7}s`);
-        flower.style.setProperty('--flower-duration', `${3.8 + Math.random() * 1}s`);
+        flower.style.setProperty('--flower-delay', `${Math.random() * 2}s`);
+        flower.style.setProperty('--flower-duration', `${4.2 + Math.random() * 1.2}s`);
         fragment.appendChild(flower);
       }
 
       flowerShower.replaceChildren(fragment);
-      setTimeout(() => flowerShower.replaceChildren(), 5600);
+      setTimeout(() => flowerShower.replaceChildren(), 7800);
     }
 
     function openInvitation() {
