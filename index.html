@@ -1578,27 +1578,26 @@
     function showerFlowers() {
       const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       if (reducedMotion) return;
-      const count = window.innerWidth <= 760 ? 100 : 160;
+      const count = window.innerWidth <= 760 ? 220 : 340;
       const fragment = document.createDocumentFragment();
 
       for (let index = 0; index < count; index += 1) {
         const flower = document.createElement('span');
         flower.className = 'shower-flower';
         flower.textContent = showerGlyphs[index % showerGlyphs.length];
-        const left = index % 5 === 0 ? 30 + Math.random() * 40
-          : index % 2 === 0 ? 4 + Math.random() * 22 : 74 + Math.random() * 22;
+        const left = 2 + Math.random() * 96;
         flower.style.setProperty('--flower-left', `${left}%`);
         flower.style.setProperty('--flower-color', showerColors[Math.floor(Math.random() * showerColors.length)]);
         flower.style.setProperty('--flower-size', `${Math.round(12 + Math.random() * 11)}px`);
         flower.style.setProperty('--flower-drift', `${Math.round(-24 + Math.random() * 48)}px`);
         flower.style.setProperty('--flower-spin', `${Math.round(120 + Math.random() * 180)}deg`);
-        flower.style.setProperty('--flower-delay', `${Math.random() * 2}s`);
+        flower.style.setProperty('--flower-delay', `${Math.random() * 5}s`);
         flower.style.setProperty('--flower-duration', `${4.2 + Math.random() * 1.2}s`);
         fragment.appendChild(flower);
       }
 
       flowerShower.replaceChildren(fragment);
-      setTimeout(() => flowerShower.replaceChildren(), 7800);
+      setTimeout(() => flowerShower.replaceChildren(), 11000);
     }
 
     function openInvitation() {
