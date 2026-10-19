@@ -289,7 +289,7 @@
       line-height: 1.32;
     }
     .parentage span { display: block; }
-    .parentage .groom-parents-line { white-space: nowrap; font-size: min(1em, 2.75vw); }
+    .parentage .groom-parents-line { white-space: normal; font-size: 1em; text-wrap: balance; }
     .parentage--groom {
       margin-top: calc(8px + 1.32em);
       margin-bottom: 1.32em;
@@ -1196,7 +1196,8 @@
       .hero-card::before { inset: -30px -18px; }
       .hero-gopuram-frame { object-fit: fill; opacity: .56; }
       .person-name { font-size: clamp(48px, 16vw, 70px); }
-      .parentage { font-size: 18px; }
+      .parentage { font-size: 20px; }
+      .parentage--groom { max-width: 100%; text-wrap: balance; line-height: 1.38; }
       .state-line { gap: 7px; }
       .state-line i { width: 25px; }
       .states-map { padding-top: 8px; }
