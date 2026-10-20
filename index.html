@@ -1579,7 +1579,7 @@
     function showerFlowers() {
       const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       if (reducedMotion) return;
-      const count = window.innerWidth <= 760 ? 220 : 340;
+      const count = window.innerWidth <= 760 ? 180 : 280;
       const fragment = document.createDocumentFragment();
 
       for (let index = 0; index < count; index += 1) {
